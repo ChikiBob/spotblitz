@@ -2,7 +2,7 @@ import { io } from 'socket.io-client';
 
 // Backend URL — phones connect via LAN IP
 // In production build, set VITE_BACKEND_URL in .env
-const BACKEND = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3005';
+const BACKEND = import.meta.env.VITE_BACKEND_URL || 'https://spotblitz-backend.onrender.com';
 
 const socket = io(BACKEND, {
   autoConnect:          true,
