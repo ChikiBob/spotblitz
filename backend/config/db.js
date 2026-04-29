@@ -2,7 +2,7 @@ const mysql2 = require('mysql2/promise');
 require('dotenv').config();
 
 const pool = mysql2.createPool(process.env.DATABASE_URL ? {
-  uri: process.env.DATABASE_URL,
+  uri: process.env.DATABASE_URL.split('?')[0], // Remove query params to avoid conflicts
   ssl: { rejectUnauthorized: false }
 } : {
   host:     process.env.DB_HOST     || 'localhost',
